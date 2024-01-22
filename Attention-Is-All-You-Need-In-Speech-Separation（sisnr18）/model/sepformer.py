@@ -434,13 +434,13 @@ if __name__ == "__main__":
 
     x = torch.rand(1, 32000)
 
-    model = Sepformer(N=128,
+    model = Sepformer(N=256,
                       C=2,
-                      L=2,
+                      L=16,
                       H=8,
                       K=250,
-                      Global_B=1,
-                      Local_B=1)
+                      Global_B=2,
+                      Local_B=8)
 
     print("{:.3f} million".format(sum([param.nelement() for param in model.parameters()]) / 1e6))
 
